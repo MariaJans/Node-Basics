@@ -39,8 +39,9 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
-  }
-  else{
+  }else if (text === "help\n"){
+    help();
+  }else{
     unknownCommand(text);
   }
 }
@@ -80,3 +81,7 @@ function quit(){
 
 // The following line starts the application
 startApp("Maria Jansian")
+ 
+function help(){
+  console.log ("The possible commands are: hello , quit or exit")
+}
