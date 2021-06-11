@@ -112,9 +112,13 @@ function add(x){
 //remove a new item to the array
 function remove(y){
   let index= y.match(/\d+/);
-if (index!== ""){
-   index=parseInt(index[0])
-   array.splice(index-1,1)
+if (index!== null){
+  if(index > array.length){
+    console.log("This number do not exist")
+  }else{
+    index=parseInt(index[0])
+    array.splice(index-1,1)
+  }
   }else{ 
     array.pop()
   }
