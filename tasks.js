@@ -89,10 +89,13 @@ function help(){
   console.log ("The possible commands are: hello, hello "+ '+ value' +" ,quit or exit and help")
 }
 
-let array= ["1-go home","2-work", "3-eat"]
+let array= ["go home","work", "eat"]
 
 function list(){
-  let x = array.map(x => x+"\n")
-  let y = x.toString().split(",").join("").trim()
-  console.log(y)
+  // let x = array.map(x => x+"\n")
+  for(let i = 0; i<array.length; i++){
+    console.log((i+1)+". " + array[i])
+  }
+  // let y = x.toString().split(",").join("").trim()
+  // console.log(x)
 }
