@@ -35,6 +35,7 @@ function startApp(name){
  */
 function onDataReceived(text) {
   let addcomp = /add/;
+  let removecomp = /remove/;
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
@@ -46,6 +47,8 @@ function onDataReceived(text) {
     list();
   }else if (addcomp.test(text)){
     add(text);
+  }else if (removecomp.test(text)){
+    remove(text);
   }else{
     unknownCommand(text);
   }
@@ -104,4 +107,13 @@ function add(x){
   if(result.trim() !== ""){
     array.push(result.trim());
   }else{ console.log("Error!")}
+}
+function remove(y){
+  let index= y.match(/\d+/);
+if (index!== ""){
+   index=parseInt(index[0])
+   array.splice(index-1,1)
+  }else{ 
+    array.pop()
+  }
 }
