@@ -34,6 +34,7 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+  let addcomp = /add/;
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
@@ -43,6 +44,8 @@ function onDataReceived(text) {
     help();
   }else if (text === "list\n"){
     list();
+  }else if (addcomp.test(text)){
+    add(text);
   }else{
     unknownCommand(text);
   }
@@ -92,10 +95,13 @@ function help(){
 let array= ["go home","work", "eat"]
 
 function list(){
-  // let x = array.map(x => x+"\n")
   for(let i = 0; i<array.length; i++){
     console.log((i+1)+". " + array[i])
   }
-  // let y = x.toString().split(",").join("").trim()
-  // console.log(x)
+}
+function add(x){
+  let result = x.replace(/add/,"");
+  if(result.trim() !== ""){
+    array.push(result.trim());
+  }else{ console.log("Error!")}
 }
