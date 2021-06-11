@@ -41,6 +41,8 @@ function onDataReceived(text) {
     hello(text);
   }else if (text === "help\n"){
     help();
+  }else if (text === "list\n"){
+    list();
   }else{
     unknownCommand(text);
   }
@@ -85,4 +87,12 @@ startApp("Maria Jansian")
 // show you the possible commands you can use in this application
 function help(){
   console.log ("The possible commands are: hello, hello "+ '+ value' +" ,quit or exit and help")
+}
+
+let array= ["1-go home","2-work", "3-eat"]
+
+function list(){
+  let x = array.map(x => x+"\n")
+  let y = x.toString().split(",").join("").trim()
+  console.log(y)
 }
