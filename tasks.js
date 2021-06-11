@@ -84,5 +84,5 @@ startApp("Maria Jansian")
 
 // show you the possible commands you can use in this application
 function help(){
-  console.log ("The possible commands are: hello , quit or exit and help")
+  console.log ("The possible commands are: hello, hello "+ '+ value' +" ,quit or exit and help")
 }
