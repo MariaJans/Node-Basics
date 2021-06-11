@@ -92,7 +92,7 @@ startApp("Maria Jansian")
 
 // show you the possible commands you can use in this application
 function help(){
-  console.log ("The possible commands are: hello, hello "+ '+ value' +" ,quit or exit and help")
+  console.log ("The possible commands are: hello, hello "+ '+ value' +" ,quit or exit, add, remove and help")
 }
 
 let array= ["go home","work", "eat"]
@@ -102,12 +102,14 @@ function list(){
     console.log((i+1)+". " + array[i])
   }
 }
+// add a new item to the array
 function add(x){
   let result = x.replace(/add/,"");
   if(result.trim() !== ""){
     array.push(result.trim());
   }else{ console.log("Error!")}
 }
+//remove a new item to the array
 function remove(y){
   let index= y.match(/\d+/);
 if (index!== ""){
